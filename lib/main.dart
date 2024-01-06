@@ -181,14 +181,8 @@ class PlayButtons extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  CircleAvatar(
-                    radius: 25.r,
-                    backgroundColor: const Color(0XFFf01b6e),
-                  ),
-                  CircleAvatar(
-                    radius: 25.r,
-                    backgroundColor: const Color(0XFFf01b6e),
-                  ),
+                  ActionButton(),
+                  ActionButton(),
                 ],
               ),
             ),
@@ -218,6 +212,41 @@ class PlayButtons extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ActionButton extends StatefulWidget {
+  const ActionButton({
+    super.key,
+  });
+
+  @override
+  State<ActionButton> createState() => _ActionButtonState();
+}
+
+class _ActionButtonState extends State<ActionButton> {
+  bool isTapped = false;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) => setState(() => isTapped = true),
+      onTapUp: (_) => setState(() => isTapped = false),
+      child: Stack(
+        children: [
+          Transform.translate(
+            offset: isTapped ? const Offset(0, 0) : const Offset(5, -1),
+            child: CircleAvatar(
+              radius: 25.r,
+              backgroundColor: Color(0xFFF25F98).withOpacity(.3),
+            ),
+          ),
+          CircleAvatar(
+            radius: 25.r,
+            backgroundColor: const Color(0XFFf01b6e),
           ),
         ],
       ),
