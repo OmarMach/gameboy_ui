@@ -176,8 +176,8 @@ class PlayButtons extends StatelessWidget {
               color: const Color(0XFFe2e2e2),
               borderRadius: BorderRadius.circular(50.r),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -220,9 +220,7 @@ class PlayButtons extends StatelessWidget {
 }
 
 class ActionButton extends StatefulWidget {
-  const ActionButton({
-    super.key,
-  });
+  const ActionButton({super.key});
 
   @override
   State<ActionButton> createState() => _ActionButtonState();
@@ -241,7 +239,7 @@ class _ActionButtonState extends State<ActionButton> {
             offset: isTapped ? const Offset(0, 0) : const Offset(5, -1),
             child: CircleAvatar(
               radius: 25.r,
-              backgroundColor: Color(0xFFF25F98).withOpacity(.3),
+              backgroundColor: const Color(0XFFf01b6e).withOpacity(.3),
             ),
           ),
           CircleAvatar(
